@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Raven Tracker
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.0.2
 // @description  Wyświetla listę graczy Raven na poziomie 114
 // @author       Dracena
 // @match        *.margonem.pl/*
@@ -24,7 +24,7 @@
       "Sevagoth","Furrina","Wolnyy","Tsubasa Hanekawa","chat gpt","Dark of Woriors","Vardagen","Los Badzioros","Zabawka Gucia","Żona Burmistrza","szalomka","Sotolii"
     ];
  
-    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1492565278175920230/dAr2etnBr88thd_gz-BEOu9ilr8ErV9EoH9uqnGeU80MMo0NLPREy7AukjAiha1FwQHr";
+    const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1492564015287636082/Bk7WlAxDsYzuqcfByNOt0MWQ8ZAwE7U5eMHqqg-ubAzML76y67s5_twsPHDSLRn-JFL_";
     const WATCH_LEVEL = 114;
     const NOTIFICATION_THRESHOLD = 5;
  
@@ -40,7 +40,7 @@
     function sendDiscordNotification(players) {
         if (players.length < 3) return;
  
-        const message = `🔥 Raven lv${WATCH_LEVEL} (${players.length}): ${players.map(p => p.n).join(", ")}`;
+        const message = `💀 Raven 114 (${players.length}): ${players.map(p => p.n).join(", ")}`;
  
         GM_xmlhttpRequest({
             method: "POST",
@@ -240,7 +240,7 @@
  
         const title = document.createElement("span");
         title.id = "tracker-title";
-        title.textContent = `Raven Tracker lv${WATCH_LEVEL}`;
+        title.textContent = `Raven Tracker 114`;
         title.style.cssText = "color:#eee;font-weight:600;font-size:12px;";
  
         const refreshBtn = document.createElement("button");
@@ -292,7 +292,7 @@
         header.addEventListener("selectstart", e => e.preventDefault());
         refreshBtn.addEventListener("click", fetchNCPlayers);
         document.addEventListener("dblclick", function(e) {
-            const h = document.getElementById("tracker-header");
+            const h = document.getElementById("");
             if (h && h.contains(e.target)) resetPosition();
         });
     }
