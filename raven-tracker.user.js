@@ -307,7 +307,7 @@
  
         checkTrackerPosition();
         fetchNCPlayers();
-        setInterval(fetchNCPlayers, 10000);
+        setInterval(fetchNCPlayers, 300000);
     });
  
     window.addEventListener("resize", checkTrackerPosition);
