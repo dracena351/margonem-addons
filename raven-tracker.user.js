@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Raven Tracker
 // @namespace    http://tampermonkey.net/
-// @version      0.0.3
+// @version      0.0.4
 // @description  Wyświetla listę graczy Raven na poziomie 114
 // @author       Dracena
 // @match        *.margonem.pl/*
@@ -307,7 +307,7 @@
  
         checkTrackerPosition();
         fetchNCPlayers();
-        setInterval(fetchNCPlayers, 300000);
+        setInterval(fetchNCPlayers, 480000);
     });
  
     window.addEventListener("resize", checkTrackerPosition);
